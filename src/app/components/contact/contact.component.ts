@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-contact',
   imports: [CommonModule, FormsModule],
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']  // Corrected from styleUrl to styleUrls
+  styleUrls: ['./contact.component.css']  // Corrected from styleUrl to styleUrls 
 })
 export class ContactComponent {
   contact = {
