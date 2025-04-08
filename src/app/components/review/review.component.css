@@ -1,0 +1,63 @@
+/* src/app/customer-review/customer-review.component.css */
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+  }
+  .heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .heading span {
+    color: #d10b5d;
+  }
+  .reviews {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .review-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+  }
+  .stars {
+    color: #e91e63;
+    font-size: 18px;
+  }
+  .review-text {
+    margin: 15px 0;
+    color: #444;
+  }
+  .customer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  .customer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .customer-name {
+    font-weight: bold;
+    color: #333;
+  }
+  .customer-role {
+    color: gray;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .review-box {
+        flex: 1 1 100%;
+        max-width: 100%;  /* Fixed */
+    }
+}
