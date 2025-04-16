@@ -1,9 +1,6 @@
 <div class="login-container">
   <h2>Welcome to Login</h2>
 
-  <!-- <img src="https://media.istockphoto.com/id/2164207000/photo/summer-bouquet-beautiful-multi-colored-fresh-flower-arrangement-birthday-bouquet-made-of.webp?a=1&b=1&s=612x612&w=0&k=20&c=72vI_Tu0QA2qRkxrij2B4DB4jtlkTAJvTSWj7xc6PL0="/>   -->
- 
-  
   <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
       <label for="username">Username</label>
@@ -15,9 +12,7 @@
       <input type="password" id="password" name="password" [(ngModel)]="password" required aria-label="Password" />
     </div>
 
-    <button type="submit" [disabled]="!loginForm.form.valid || isLoading">
-      <span *ngIf="isLoading" class="spinner"></span> Login
-    </button><br><br>
+    <button type="submit" [disabled]="!loginForm.form.valid">Login</button><br><br>
     <button type="button" (click)="onRegister()">Register</button>
   </form>
 

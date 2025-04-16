@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';  // Correct import for Router
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],  // Include RouterModule for routing
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css'
+  styleUrls: ['./product.component.css']  // Corrected styleUrl to styleUrls
 })
 export class ProductComponent {
   products = [
@@ -60,6 +61,8 @@ export class ProductComponent {
     }
   ];
 
+  constructor(private router: Router) {}
+
   toggleAddToCart(product: any): void {
     product.showAddToCart = !product.showAddToCart;
   }
@@ -67,5 +70,6 @@ export class ProductComponent {
   addToCart(product: any): void {
     console.log('Added to cart:', product.name);
     product.showAddToCart = false; // Optional: hide after adding
+    this.router.navigate(['payment']);  // Redirect to payment page
   }
 }
