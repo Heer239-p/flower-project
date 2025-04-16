@@ -1,13 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule, Router } from '@angular/router';  // Correct import for Router
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, RouterModule],  // Include RouterModule for routing
+  imports: [CommonModule, RouterModule],
   templateUrl: './product.component.html',
-  styleUrls: ['./product.component.css']  // Corrected styleUrl to styleUrls
+  styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
   products = [
@@ -68,8 +68,16 @@ export class ProductComponent {
   }
 
   addToCart(product: any): void {
-    console.log('Added to cart:', product.name);
-    product.showAddToCart = false; // Optional: hide after adding
-    this.router.navigate(['payment']);  // Redirect to payment page
+    const cart = JSON.parse(localStorage.getItem('cartItems') || '[]');
+
+    const alreadyExists = cart.some((p: any) => p.image === product.image);
+
+    if (!alreadyExists) {
+      cart.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(cart));
+    }
+
+    product.showAddToCart = false;
+    this.router.navigate(['/payment']);
   }
 }
