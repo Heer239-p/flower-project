@@ -1,1 +1,20 @@
-<p>product works!</p>
+<div class="title">
+  <strong>Latest <span class="highlight">Products</span></strong>
+</div>
+
+<div class="products">
+  <div class="product" *ngFor="let product of products" (click)="toggleAddToCart(product)">
+    <div class="discount">{{ product.discount }}%</div>
+    <img [src]="product.image" [alt]="product.name">
+    <div class="product-name">{{ product.name }}</div>
+    <div class="price">
+      ${{ product.price }} <span class="old-price">${{ product.oldPrice }}</span>
+    </div>
+
+    <button *ngIf="product.showAddToCart"
+            (click)="addToCart(product); $event.stopPropagation()"
+            class="add-to-cart-btn">
+      Add to Cart
+    </button>
+  </div>
+</div>

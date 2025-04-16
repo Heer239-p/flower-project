@@ -30,6 +30,7 @@
   
   .footer-box a:hover {
     color: #e91e63;
+    cursor: pointer;
   }
   
   .footer-box img {

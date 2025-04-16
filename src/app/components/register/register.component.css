@@ -59,6 +59,12 @@
   button:hover {
     background-color: #40407a;
   }
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 4px;
+  }
+  
   
   @media (max-width: 768px) {
     .contact-container {

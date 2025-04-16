@@ -1,0 +1,43 @@
+<div class="contact-container">
+    <div class="form-section">
+      <h2>Sign <span>Up</span></h2>
+      <form #registerForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+        <input
+          type="text"
+          placeholder="Enter Name"
+          [(ngModel)]="contact.name"
+          name="name"
+          required
+        />
+        <input
+          type="email"
+          placeholder="Enter Email"
+          [(ngModel)]="contact.email"
+          name="email"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Enter Phone Number"
+          [(ngModel)]="contact.phone"
+          name="phone"
+        />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          [(ngModel)]="contact.Password"
+          name="password"
+          required
+        />
+        <!-- ✅ Disable the button until the form is valid -->
+        <button type="submit" [disabled]="!registerForm.valid">Sign Up</button>
+      </form>
+    </div>
+    <div class="image-section">
+      <img
+        src="https://media.istockphoto.com/id/1317988317/photo/close-up-of-young-asian-female-small-business-owner-in-apron-starting-her-business-day.jpg?s=612x612&w=0&k=20&c=2UxrtbG076Lj_YYDb--4F7IqlHprDy1YyYgh_NQC7Ak="
+        alt="Contact Us"
+      />
+    </div>
+  </div>
+  
