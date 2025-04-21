@@ -1,0 +1,56 @@
+<div class="owner-dashboard">
+    <!-- Left side: Form Section -->
+    <div class="form-section">
+      <h2>Add New Product</h2>
+      <form (ngSubmit)="addProduct()">
+        <input
+          type="text"
+          placeholder="Product Name"
+          [(ngModel)]="product.name"
+          name="name"
+          required
+        />
+  
+        <input
+          type="number"
+          placeholder="Price"
+          [(ngModel)]="product.price"
+          name="price"
+          required
+        />
+  
+        <input
+          type="number"
+          placeholder="Old Price"
+          [(ngModel)]="product.oldPrice"
+          name="oldPrice"
+        />
+  
+        <input
+          type="number"
+          placeholder="Discount (%)"
+          [(ngModel)]="product.discount"
+          name="discount"
+        />
+  
+        <input
+          type="text"
+          placeholder="Image URL"
+          [(ngModel)]="product.image"
+          name="image"
+        />
+  
+        <button type="submit">Add Product</button>
+      </form>
+    </div>
+  
+    <!-- Right side: Image Section -->
+    <div class="image-section" *ngIf="product.image">
+      <img [src]="product.image" alt="Product Image Preview" />
+    </div>
+    <div *ngIf="successMessage" style="color: green; margin-bottom: 15px;">
+        {{ successMessage }}
+      </div>
+      
+  </div>
+  

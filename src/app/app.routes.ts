@@ -10,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { OwnerDashboardComponent } from './owner-dashboard/owner-dashboard.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },       // Default route
@@ -20,5 +21,6 @@ export const routes: Routes = [
     {path:'login', component:LoginComponent},
     {path:'register', component: RegisterComponent},
     {path:'payment', component: PaymentComponent},
+    { path: 'owner-dashboard', component: OwnerDashboardComponent },
    
 ]
